@@ -13,32 +13,33 @@ import java.util.stream.Collectors;
 
 @Data
 public class LibraryUserDetails implements UserDetails {
-    private String username;
+
+    private String userName;
     private String password;
     private List<GrantedAuthority> authorities;
 
     public LibraryUserDetails(User user) {
-        this.username = user.getEmail();
-        this.password = user.getPassword();
+        userName = user.getEmail();
+        password = user.getPassword();
         authorities = Arrays.stream(user.getRoles()
-                .split(","))
+                        .split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.authorities;
+        return authorities;
     }
 
     @Override
     public String getPassword() {
-        return this.password;
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return this.username;
+        return userName;
     }
 
     @Override
