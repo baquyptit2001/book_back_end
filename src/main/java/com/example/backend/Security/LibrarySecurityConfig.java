@@ -17,7 +17,8 @@ public class LibrarySecurityConfig {
     private static final String[] UN_SECURED_URLs = {
             "/books/all",
             "/books/book/{id}",
-            "/users/**"
+            "/users/**",
+            "/error"
     };
 
     @Bean
