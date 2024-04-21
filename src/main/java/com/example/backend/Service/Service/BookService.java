@@ -2,6 +2,7 @@ package com.example.backend.Service.Service;
 
 import com.example.backend.Exception.BookNotFoundException;
 import com.example.backend.Model.Book;
+import com.example.backend.Model.User;
 import com.example.backend.Repository.BookRepository;
 import com.example.backend.Service.Interface.IBookService;
 import lombok.RequiredArgsConstructor;
